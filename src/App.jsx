@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import { fetchWeatherData } from "./services/weatherService";
+import WeatherDisplay from "./components/WeatherDisplay/WeatherDisplay";
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -30,6 +31,8 @@ const App = () => {
 
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
+
+      <WeatherDisplay />
     </div>
   );
 };
