@@ -3,6 +3,7 @@ import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import { fetchWeatherData } from "./services/weatherService";
 import WeatherDisplay from "./components/WeatherDisplay/WeatherDisplay";
+import { GoMoon, GoSun } from "react-icons/go";
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -41,7 +42,11 @@ const App = () => {
   return (
     <div className="app">
       <button onClick={toggleTheme} className="theme-toggle">
-        Switch to {theme === "light" ? "Dark" : "Light"} Mode
+        {theme === "light" ? (
+          <GoMoon className="icon" />
+        ) : (
+          <GoSun className="icon" />
+        )}
       </button>
 
       <h1>Weather</h1>
