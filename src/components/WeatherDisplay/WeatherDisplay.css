@@ -1,0 +1,31 @@
+.weather-display {
+  padding-top: 40px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-display p {
+    margin: 8px 0;
+}
+.weather-city {
+  margin: 0;
+  font-size: 52px;
+}
+
+.temperature {
+  font-size: 48px;
+  margin: 0;
+}
+
+.weather-description {
+  font-size: 22px;
+}
+
+.display-column {
+  display: flex;
+  gap: 40px;
+  font-size: 20px;
+  margin-top: 32px;
+}
+
