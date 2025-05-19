@@ -22,10 +22,11 @@ body {
 }
 
 .app {
+  position: relative;
   background-image: var(--background-image); 
   color: var(--text-color); 
   transition: background-color 0.3s ease, color 0.3s ease; 
-  padding: 24px;
+  padding: 60px 24px 32px;
   margin-top: 40px;
   border-radius: 10px;
   display: flex;
@@ -35,3 +36,22 @@ body {
   max-width: 500px;
   font-size: 18px;
 }
+
+.theme-toggle {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 28px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.icon {
+  fill:#f3f0f0;
+}
+
+
+
+
+  

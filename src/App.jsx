@@ -28,7 +28,7 @@ const App = () => {
     try {
       const data = await fetchWeatherData(city);
       setWeatherData(data);
-    } catch (error) {
+    } catch (err) {
       setError(err.message || "An unknown error occurred.");
     } finally {
       setIsLoading(false);
@@ -48,10 +48,9 @@ const App = () => {
           <GoSun className="icon" />
         )}
       </button>
-
-      <h1>Weather</h1>
       <SearchBar onSearch={handleSearch} />
       {isLoading && <p>Loading...</p>}
+
       {error && <p>{error}</p>}
       {weatherData && !isLoading && !error && (
         <WeatherDisplay data={weatherData} />
