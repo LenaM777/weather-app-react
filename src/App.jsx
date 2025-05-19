@@ -32,7 +32,7 @@ const App = () => {
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
 
-      <WeatherDisplay />
+      <WeatherDisplay data={weatherData} />
     </div>
   );
 };
