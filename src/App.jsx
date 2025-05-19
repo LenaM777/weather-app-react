@@ -9,6 +9,12 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    return savedTheme || "light";
+  });
+
   const handleSearch = async (city) => {
     setIsLoading(true);
     setError(null);
@@ -24,8 +30,16 @@ const App = () => {
     }
   };
 
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
   return (
     <div className="app">
+      <button onClick={toggleTheme} className="theme-toggle">
+        Switch to {theme === "light" ? "Dark" : "Light"} Mode
+      </button>
+
       <h1>Weather</h1>
       <SearchBar onSearch={handleSearch} />
       {isLoading && <p>Loading...</p>}
