@@ -28,11 +28,11 @@ const App = () => {
     <div className="app">
       <h1>Weather</h1>
       <SearchBar onSearch={handleSearch} />
-
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-
-      <WeatherDisplay data={weatherData} />
+      {weatherData && !isLoading && !error && (
+        <WeatherDisplay data={weatherData} />
+      )}
     </div>
   );
 };
