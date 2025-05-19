@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 const App = () => {
+  const [weatherData, setWeatherData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const handleSearch = (city) => {
     console.log("Searching for city:", city);
   };
