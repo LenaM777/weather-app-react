@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { React, useState, useEffect } from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import { fetchWeatherData } from "./services/weatherService";
@@ -11,9 +11,13 @@ const App = () => {
 
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
-
     return savedTheme || "light";
   });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const handleSearch = async (city) => {
     setIsLoading(true);
