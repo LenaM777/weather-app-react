@@ -50,7 +50,6 @@ const App = () => {
       </button>
       <SearchBar onSearch={handleSearch} />
       {isLoading && <p>Loading...</p>}
-
       {error && <p>{error}</p>}
       {weatherData && !isLoading && !error && (
         <WeatherDisplay data={weatherData} />
